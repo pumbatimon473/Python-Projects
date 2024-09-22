@@ -1,0 +1,150 @@
+MODELS: v2
+- User
+  - username: str
+  - email: str
+  - password: str
+  - groups: List[Group]
+
+- Expense
+  - amount: float
+  - created_by: User
+  - title: str
+  - description: str
+
+
+# Happens between two users (not associated with any group)
+- UserExpense(Expense)
+  - paid_by: User
+  - paid_to: User
+
+
+- Group
+  - name: str
+  - created_by: User
+  - members: List[User]
+  - expenses: List[GroupExpense]
+
+- GroupExpense(Expense)
+  - paid_by: List[ExpensePaidBy]
+  - shared_by: List[ExpenseSharedBy]
+
+- ExpensePaidBy
+  - amount: float
+  - paid_by: User
+
+- ExpenseSharedBy
+  - amount: float
+  - shared_by: User
+
+
+INTERFACES:
+- SettleUp (implemented by User and Group)
+  + settle_up()
+    -- Gives a list of transactions. When followed, the calling body will not
+    have any money given or taken from anybody.
+
+
+Models Summary:
+- User
+- Expense
+- UserExpense
+- Group
+- GroupExpense
+- ExpensePaidBy
+- ExpenseSharedBy
+
+
+SCHEMA:
+
+user:
+  - id
+  - username
+  - email
+  - password
+  # groups
+    -- relation: User   : Group
+                   1    :  m
+                   m    :  1
+            =>     m    :  m
+            mapping table: user_group
+
+expense:
+  - id
+  - amount
+  - title
+  - description
+  - created_by_user_id
+    -- relation: Expense : User
+                    1    :   1
+                    m    :   1
+
+group:
+  - id
+  - name
+  # members
+    -- relation: Group : User
+                   1   :  m
+                   m   :  1
+              =>   m   :  m
+              mapping_table: user_group
+  # expenses
+    -- relation: Group : GroupExpense
+                   1   :   m
+                   1   :   1
+               =>  1   :   m
+
+
+expense_paid_by:
+  - id
+  - amount
+  - user_id
+    -- relation: ExpensePaidBy : User
+                        1      :   1
+                        m      :   1
+                 =>     m      :   1
+
+
+expense_shared_by:
+  - id
+  - amount
+  - user_id
+    -- relation: ExpenseSharedBy : User
+                        1        :   1
+                        m        :   1
+                 =>     m        :   1
+
+
+group_expense:
+  - id
+  - expense_id
+  - group_id
+    -- relation: GroupExpense : Group
+                      1       :   1
+                      m       :   1
+                 =>   m       :   1
+  # paid_by:
+    -- relation: GroupExpense : ExpensePaidBy
+                      1       :   m
+                      m       :   1
+                 =>   m       :   m
+                 mapping_table: group_expense_paid_by
+  # shared_by:
+    -- relation: GroupExpense : ExpenseSharedBy
+                      1       :   m
+                      m       :   1
+                 =>   m       :   m
+                 mapping_table: group_expense_shared_by
+
+Mapping Tables:
+- user_group
+    -- id
+    -- user_id
+    -- group_id
+- group_expense_paid_by
+    -- id
+    -- group_expense_id
+    -- expense_paid_by_id
+- group_expense_shared_by
+    -- id
+    -- group_expense_id
+    -- expense_shared_by_id

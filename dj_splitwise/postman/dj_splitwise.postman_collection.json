@@ -1,0 +1,1387 @@
+{
+	"info": {
+		"_postman_id": "29dc4dd0-1892-4ecc-85ae-4e3ea9a55dfd",
+		"name": "dj_splitwise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20054625"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "token",
+					"item": [
+						{
+							"name": "api/token/",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"rahul\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/token/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"token",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/token/refresh/",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNjY2MDI5OSwiaWF0IjoxNzI2NDg3NDk5LCJqdGkiOiI3YjJkYzE4NmFiOGM0YzY4OWM1NGNiMGRhZjQ4YzQ2YyIsInVzZXJfaWQiOjF9.bcaJOZDnVCcFQAlt1Jm9ME8Rl9CiDg8FAU2JtY4njRA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/token/refresh/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"token",
+										"refresh",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "register/user/",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"rahul\",\r\n    \"email\": \"rahul@gandhi.com\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/register/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"register",
+										"user",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "profile/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTcwODU2LCJpYXQiOjE3MjY0ODQ0NTYsImp0aSI6IjMzOWU5MTk1NTI3ODQ5N2U4Yjg4ZTBjYTI1NzFkZmIzIiwidXNlcl9pZCI6MX0.w0Rw9Nx0pSChd7UMlwANE7z0iNGVnysgKHDFpkeal1w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/profile/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"profile",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "profile/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2ODMyNzk1LCJpYXQiOjE3MjY3NDYzOTUsImp0aSI6IjBiZDM4NDNmODc4MzQ4N2JiODMyNDRkZDUwYzVhZjI2IiwidXNlcl9pZCI6NH0.jf0Bv-nCWLa4i1_6RhwBPvCadW084hY4qrSvwNuCGb4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/profile/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"profile",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "admin_user",
+					"item": [
+						{
+							"name": "admins/user/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTY4NjE5LCJpYXQiOjE3MjY0ODIyMTksImp0aSI6IjhmYzRkZmQyODNlZTQzOGRiMzhiM2VkMWFjNjY4YWNjIiwidXNlcl9pZCI6M30.hinAR6eirmdWd4J-v4rzzop76JjYzqKDMjQridSh4JA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/admins/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"admins",
+										"user",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admins/user/<int:pk>/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTY4NjE5LCJpYXQiOjE3MjY0ODIyMTksImp0aSI6IjhmYzRkZmQyODNlZTQzOGRiMzhiM2VkMWFjNjY4YWNjIiwidXNlcl9pZCI6M30.hinAR6eirmdWd4J-v4rzzop76JjYzqKDMjQridSh4JA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/admins/user/1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"admins",
+										"user",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admins/user/<int:pk>/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTY4NjE5LCJpYXQiOjE3MjY0ODIyMTksImp0aSI6IjhmYzRkZmQyODNlZTQzOGRiMzhiM2VkMWFjNjY4YWNjIiwidXNlcl9pZCI6M30.hinAR6eirmdWd4J-v4rzzop76JjYzqKDMjQridSh4JA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/admins/user/1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"admins",
+										"user",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "group",
+					"item": [
+						{
+							"name": "user/group/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTg0NDkzLCJpYXQiOjE3MjY0OTgwOTMsImp0aSI6IjBjZjRjYjQ4Mzk4NDQzZjRhNDZjMmM2ZTgyNDE5NWJlIiwidXNlcl9pZCI6NH0.x1zDofxMULV_Gh-uZIKdiOS1WR7ssm61hC4BrgYGlvI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Lok Sabha Election 2024\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/user/group/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"group",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user/group/<int:pk>/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Njg3MTczLCJpYXQiOjE3MjY2MDA3NzMsImp0aSI6IjRkOTQ0MDk1OTQyYTQ0Mjg4Njc2YjdkNmMwMzRhY2ViIiwidXNlcl9pZCI6NH0.sw3P90z6JmP1egQYgwNlhUjGNrTSQYeGHYcSaMuTDvQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"members\": [1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/user/group/1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"group",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user/group/<int:pk>/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2ODIwOTgwLCJpYXQiOjE3MjY3MzQ1ODAsImp0aSI6IjM3NzkzY2M5ODA5NjQ2OTk4NjFmMTU0NWNjZDNkZGMxIiwidXNlcl9pZCI6NH0.SWaJnSKyuDlmLLpBMS7LWHxHUtvuCq8MCLW1ITU7_d8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"members\": [5, 6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/user/group/1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"group",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user/group/<int:pk>/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTg0NDkzLCJpYXQiOjE3MjY0OTgwOTMsImp0aSI6IjBjZjRjYjQ4Mzk4NDQzZjRhNDZjMmM2ZTgyNDE5NWJlIiwidXNlcl9pZCI6NH0.x1zDofxMULV_Gh-uZIKdiOS1WR7ssm61hC4BrgYGlvI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Haryana Election 2024\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/user/group/2/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"group",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user/group/<int:pk>/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2ODIwOTgwLCJpYXQiOjE3MjY3MzQ1ODAsImp0aSI6IjM3NzkzY2M5ODA5NjQ2OTk4NjFmMTU0NWNjZDNkZGMxIiwidXNlcl9pZCI6NH0.SWaJnSKyuDlmLLpBMS7LWHxHUtvuCq8MCLW1ITU7_d8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"members\": [5]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/user/group/1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"group",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "expense",
+					"item": [
+						{
+							"name": "user",
+							"item": [
+								{
+									"name": "expense/user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTc2OTI3LCJpYXQiOjE3MjY0OTA1MjcsImp0aSI6ImI3OWVkZjBmODIwMTQ3NTI5MWI5Yzg0YWU2YWJhN2U3IiwidXNlcl9pZCI6NH0.iIgwMbySUUabidCv-R8xuaEHhxvd7orZJR0bSkzBOtg",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\": 420,\r\n    \"title\": \"Bharat Jodo Yatra\",\r\n    \"description\": \"For black suit\",\r\n    \"paid_to\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/expense/user/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"expense",
+												"user",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "admin_expense",
+							"item": [
+								{
+									"name": "admins/expense/",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTc5NDA3LCJpYXQiOjE3MjY0OTMwMDcsImp0aSI6ImE3MDQxYWU3OWEzNzRmNGJiNmE1YmI0NmJjNWM4YmIwIiwidXNlcl9pZCI6M30.g6QGauqUC_olfZ4mGwaSIrmmhQ1H6pXsRTbvgxwH5BE",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/admins/expense/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"admins",
+												"expense",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "admins/expense/user/",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NTc5NDA3LCJpYXQiOjE3MjY0OTMwMDcsImp0aSI6ImE3MDQxYWU3OWEzNzRmNGJiNmE1YmI0NmJjNWM4YmIwIiwidXNlcl9pZCI6M30.g6QGauqUC_olfZ4mGwaSIrmmhQ1H6pXsRTbvgxwH5BE",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/admins/expense/user/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"admins",
+												"expense",
+												"user",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "group",
+							"item": [
+								{
+									"name": "expense/group/<int:group_id>",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MDg5NTA4LCJpYXQiOjE3MjcwMDMxMDgsImp0aSI6IjU5OWJhMmY1YjJiNjRhNzliOWViY2ZmY2U2NTBjODBmIiwidXNlcl9pZCI6Nn0.Xy4eGQxmqi3F6cNPSgJC8aesRytsrKwZgjsyIyIHe6w",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"paid_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1000\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 1000\r\n        }\r\n    ],\r\n    \"shared_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1500\r\n        },\r\n        {\r\n            \"user\": 5,\r\n            \"amount\": 500\r\n        }\r\n    ],\r\n    \"amount\": 2000,\r\n    \"title\": \"Party Banner\",\r\n    \"description\": \"Party prachar banner\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/expense/group/1/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"expense",
+												"group",
+												"1",
+												""
+											]
+										},
+										"description": "# Expense Group Creation\n\nThis endpoint allows the creation of a new expense group.\n\n## Request Body\n\n- `paid_by` (array): An array of objects representing the users who have paid for the expense, along with the amount they have paid.\n    \n    - `user` (number): The user ID.\n        \n    - `amount` (number): The amount paid by the user.\n        \n- `shared_by` (array): An array of objects representing the users with whom the expense is shared, along with the amount they are responsible for.\n    \n    - `user` (number): The user ID.\n        \n    - `amount` (number): The amount shared by the user.\n        \n- `amount` (number): The total amount of the expense.\n    \n- `title` (string): The title of the expense group.\n    \n- `description` (string): A description of the expense group.\n    \n\n## Response\n\n- `id` (number): The ID of the created expense group.\n    \n- `paid_by` (array): An array of objects representing the users who have paid for the expense in the created group, along with their respective details.\n    \n    - `id` (number): The ID of the payment record.\n        \n    - `user` (number): The user ID.\n        \n    - `created_at` (string): The timestamp of creation.\n        \n    - `updated_at` (string): The timestamp of the last update.\n        \n    - `amount` (string): The amount paid by the user.\n        \n- `shared_by` (array): An array of objects representing the users with whom the expense is shared in the created group, along with their respective details.\n    \n    - `id` (number): The ID of the sharing record.\n        \n    - `user` (number): The user ID.\n        \n    - `created_at` (string): The timestamp of creation.\n        \n    - `updated_at` (string): The timestamp of the last update.\n        \n    - `amount` (string): The amount shared by the user.\n        \n- `created_at` (string): The timestamp of creation of the expense group.\n    \n- `updated_at` (string): The timestamp of the last update of the expense group.\n    \n- `amount` (string): The total amount of the expense group.\n    \n- `title` (string): The title of the expense group.\n    \n- `description` (string): A description of the expense group.\n    \n- `created_by` (number): The ID of the user who created the expense group.\n    \n- `group` (number): The ID of the group to which the expense belongs."
+									},
+									"response": [
+										{
+											"name": "example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"paid_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1000\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 1000\r\n        }\r\n    ],\r\n    \"shared_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1500\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 500\r\n        }\r\n    ],\r\n    \"amount\": 2000,\r\n    \"title\": \"Party Banner\",\r\n    \"description\": \"Party prachar banner\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8000/expense/group/1/",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8000",
+													"path": [
+														"expense",
+														"group",
+														"1",
+														""
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Tue, 17 Sep 2024 13:58:17 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "WSGIServer/0.2 CPython/3.12.2"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Allow",
+													"value": "POST, OPTIONS"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Length",
+													"value": "715"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 9,\n    \"paid_by\": [\n        {\n            \"id\": 3,\n            \"user\": 1,\n            \"created_at\": \"2024-09-17T13:46:09.647948Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.647948Z\",\n            \"amount\": \"1000.00\"\n        },\n        {\n            \"id\": 4,\n            \"user\": 4,\n            \"created_at\": \"2024-09-17T13:46:09.668405Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.668405Z\",\n            \"amount\": \"1000.00\"\n        }\n    ],\n    \"shared_by\": [\n        {\n            \"id\": 1,\n            \"user\": 1,\n            \"created_at\": \"2024-09-17T13:46:09.692489Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.692489Z\",\n            \"amount\": \"1500.00\"\n        },\n        {\n            \"id\": 2,\n            \"user\": 4,\n            \"created_at\": \"2024-09-17T13:46:09.712728Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.712728Z\",\n            \"amount\": \"500.00\"\n        }\n    ],\n    \"created_at\": \"2024-09-17T13:46:09.631170Z\",\n    \"updated_at\": \"2024-09-17T13:46:09.631170Z\",\n    \"amount\": \"2000.00\",\n    \"title\": \"Party Banner\",\n    \"description\": \"Party prachar banner\",\n    \"created_by\": 1,\n    \"group\": 1\n}"
+										}
+									]
+								},
+								{
+									"name": "expense/group/<int:group_id>",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2OTEyMzA0LCJpYXQiOjE3MjY4MjU5MDQsImp0aSI6IjBlNTg1YzMyMmRmYjQyNGM5NTI2MzhhMGQ5Mjg5MDFjIiwidXNlcl9pZCI6MX0.7r8Huf7E1dalWgFAyw3ea3U_AtRT0BPiXmBmpnqHwmk",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/expense/group/1/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"expense",
+												"group",
+												"1",
+												""
+											]
+										},
+										"description": "# Expense Group Creation\n\nThis endpoint allows the creation of a new expense group.\n\n## Request Body\n\n- `paid_by` (array): An array of objects representing the users who have paid for the expense, along with the amount they have paid.\n    \n    - `user` (number): The user ID.\n        \n    - `amount` (number): The amount paid by the user.\n        \n- `shared_by` (array): An array of objects representing the users with whom the expense is shared, along with the amount they are responsible for.\n    \n    - `user` (number): The user ID.\n        \n    - `amount` (number): The amount shared by the user.\n        \n- `amount` (number): The total amount of the expense.\n    \n- `title` (string): The title of the expense group.\n    \n- `description` (string): A description of the expense group.\n    \n\n## Response\n\n- `id` (number): The ID of the created expense group.\n    \n- `paid_by` (array): An array of objects representing the users who have paid for the expense in the created group, along with their respective details.\n    \n    - `id` (number): The ID of the payment record.\n        \n    - `user` (number): The user ID.\n        \n    - `created_at` (string): The timestamp of creation.\n        \n    - `updated_at` (string): The timestamp of the last update.\n        \n    - `amount` (string): The amount paid by the user.\n        \n- `shared_by` (array): An array of objects representing the users with whom the expense is shared in the created group, along with their respective details.\n    \n    - `id` (number): The ID of the sharing record.\n        \n    - `user` (number): The user ID.\n        \n    - `created_at` (string): The timestamp of creation.\n        \n    - `updated_at` (string): The timestamp of the last update.\n        \n    - `amount` (string): The amount shared by the user.\n        \n- `created_at` (string): The timestamp of creation of the expense group.\n    \n- `updated_at` (string): The timestamp of the last update of the expense group.\n    \n- `amount` (string): The total amount of the expense group.\n    \n- `title` (string): The title of the expense group.\n    \n- `description` (string): A description of the expense group.\n    \n- `created_by` (number): The ID of the user who created the expense group.\n    \n- `group` (number): The ID of the group to which the expense belongs."
+									},
+									"response": [
+										{
+											"name": "example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"paid_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1000\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 1000\r\n        }\r\n    ],\r\n    \"shared_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1500\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 500\r\n        }\r\n    ],\r\n    \"amount\": 2000,\r\n    \"title\": \"Party Banner\",\r\n    \"description\": \"Party prachar banner\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8000/expense/group/1/",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8000",
+													"path": [
+														"expense",
+														"group",
+														"1",
+														""
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Tue, 17 Sep 2024 13:58:17 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "WSGIServer/0.2 CPython/3.12.2"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Allow",
+													"value": "POST, OPTIONS"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Length",
+													"value": "715"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 9,\n    \"paid_by\": [\n        {\n            \"id\": 3,\n            \"user\": 1,\n            \"created_at\": \"2024-09-17T13:46:09.647948Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.647948Z\",\n            \"amount\": \"1000.00\"\n        },\n        {\n            \"id\": 4,\n            \"user\": 4,\n            \"created_at\": \"2024-09-17T13:46:09.668405Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.668405Z\",\n            \"amount\": \"1000.00\"\n        }\n    ],\n    \"shared_by\": [\n        {\n            \"id\": 1,\n            \"user\": 1,\n            \"created_at\": \"2024-09-17T13:46:09.692489Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.692489Z\",\n            \"amount\": \"1500.00\"\n        },\n        {\n            \"id\": 2,\n            \"user\": 4,\n            \"created_at\": \"2024-09-17T13:46:09.712728Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.712728Z\",\n            \"amount\": \"500.00\"\n        }\n    ],\n    \"created_at\": \"2024-09-17T13:46:09.631170Z\",\n    \"updated_at\": \"2024-09-17T13:46:09.631170Z\",\n    \"amount\": \"2000.00\",\n    \"title\": \"Party Banner\",\n    \"description\": \"Party prachar banner\",\n    \"created_by\": 1,\n    \"group\": 1\n}"
+										}
+									]
+								},
+								{
+									"name": "expense/group/<int:group_id>/id/<int:pk>/",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2ODA4MjY1LCJpYXQiOjE3MjY3MjE4NjUsImp0aSI6ImEyNWZjYzRmZGM0YzRlZGZhNzk0OGFjZmNmZjZhMWRhIiwidXNlcl9pZCI6MX0.uw__5BNoBnxEwKHYajwxvIBeKBBymxQR6S9fKrlIZT8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/expense/group/1/id/12/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"expense",
+												"group",
+												"1",
+												"id",
+												"12",
+												""
+											]
+										},
+										"description": "# Expense Group Creation\n\nThis endpoint allows the creation of a new expense group.\n\n## Request Body\n\n- `paid_by` (array): An array of objects representing the users who have paid for the expense, along with the amount they have paid.\n    \n    - `user` (number): The user ID.\n        \n    - `amount` (number): The amount paid by the user.\n        \n- `shared_by` (array): An array of objects representing the users with whom the expense is shared, along with the amount they are responsible for.\n    \n    - `user` (number): The user ID.\n        \n    - `amount` (number): The amount shared by the user.\n        \n- `amount` (number): The total amount of the expense.\n    \n- `title` (string): The title of the expense group.\n    \n- `description` (string): A description of the expense group.\n    \n\n## Response\n\n- `id` (number): The ID of the created expense group.\n    \n- `paid_by` (array): An array of objects representing the users who have paid for the expense in the created group, along with their respective details.\n    \n    - `id` (number): The ID of the payment record.\n        \n    - `user` (number): The user ID.\n        \n    - `created_at` (string): The timestamp of creation.\n        \n    - `updated_at` (string): The timestamp of the last update.\n        \n    - `amount` (string): The amount paid by the user.\n        \n- `shared_by` (array): An array of objects representing the users with whom the expense is shared in the created group, along with their respective details.\n    \n    - `id` (number): The ID of the sharing record.\n        \n    - `user` (number): The user ID.\n        \n    - `created_at` (string): The timestamp of creation.\n        \n    - `updated_at` (string): The timestamp of the last update.\n        \n    - `amount` (string): The amount shared by the user.\n        \n- `created_at` (string): The timestamp of creation of the expense group.\n    \n- `updated_at` (string): The timestamp of the last update of the expense group.\n    \n- `amount` (string): The total amount of the expense group.\n    \n- `title` (string): The title of the expense group.\n    \n- `description` (string): A description of the expense group.\n    \n- `created_by` (number): The ID of the user who created the expense group.\n    \n- `group` (number): The ID of the group to which the expense belongs."
+									},
+									"response": [
+										{
+											"name": "example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"paid_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1000\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 1000\r\n        }\r\n    ],\r\n    \"shared_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1500\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 500\r\n        }\r\n    ],\r\n    \"amount\": 2000,\r\n    \"title\": \"Party Banner\",\r\n    \"description\": \"Party prachar banner\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8000/expense/group/1/",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8000",
+													"path": [
+														"expense",
+														"group",
+														"1",
+														""
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Tue, 17 Sep 2024 13:58:17 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "WSGIServer/0.2 CPython/3.12.2"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Allow",
+													"value": "POST, OPTIONS"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Length",
+													"value": "715"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 9,\n    \"paid_by\": [\n        {\n            \"id\": 3,\n            \"user\": 1,\n            \"created_at\": \"2024-09-17T13:46:09.647948Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.647948Z\",\n            \"amount\": \"1000.00\"\n        },\n        {\n            \"id\": 4,\n            \"user\": 4,\n            \"created_at\": \"2024-09-17T13:46:09.668405Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.668405Z\",\n            \"amount\": \"1000.00\"\n        }\n    ],\n    \"shared_by\": [\n        {\n            \"id\": 1,\n            \"user\": 1,\n            \"created_at\": \"2024-09-17T13:46:09.692489Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.692489Z\",\n            \"amount\": \"1500.00\"\n        },\n        {\n            \"id\": 2,\n            \"user\": 4,\n            \"created_at\": \"2024-09-17T13:46:09.712728Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.712728Z\",\n            \"amount\": \"500.00\"\n        }\n    ],\n    \"created_at\": \"2024-09-17T13:46:09.631170Z\",\n    \"updated_at\": \"2024-09-17T13:46:09.631170Z\",\n    \"amount\": \"2000.00\",\n    \"title\": \"Party Banner\",\n    \"description\": \"Party prachar banner\",\n    \"created_by\": 1,\n    \"group\": 1\n}"
+										}
+									]
+								},
+								{
+									"name": "expense/group/<int:group_id>/id/<int:pk>/",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MDg5NTA4LCJpYXQiOjE3MjcwMDMxMDgsImp0aSI6IjU5OWJhMmY1YjJiNjRhNzliOWViY2ZmY2U2NTBjODBmIiwidXNlcl9pZCI6Nn0.Xy4eGQxmqi3F6cNPSgJC8aesRytsrKwZgjsyIyIHe6w",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/expense/group/1/id/14/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"expense",
+												"group",
+												"1",
+												"id",
+												"14",
+												""
+											]
+										},
+										"description": "# Expense Group Creation\n\nThis endpoint allows the creation of a new expense group.\n\n## Request Body\n\n- `paid_by` (array): An array of objects representing the users who have paid for the expense, along with the amount they have paid.\n    \n    - `user` (number): The user ID.\n        \n    - `amount` (number): The amount paid by the user.\n        \n- `shared_by` (array): An array of objects representing the users with whom the expense is shared, along with the amount they are responsible for.\n    \n    - `user` (number): The user ID.\n        \n    - `amount` (number): The amount shared by the user.\n        \n- `amount` (number): The total amount of the expense.\n    \n- `title` (string): The title of the expense group.\n    \n- `description` (string): A description of the expense group.\n    \n\n## Response\n\n- `id` (number): The ID of the created expense group.\n    \n- `paid_by` (array): An array of objects representing the users who have paid for the expense in the created group, along with their respective details.\n    \n    - `id` (number): The ID of the payment record.\n        \n    - `user` (number): The user ID.\n        \n    - `created_at` (string): The timestamp of creation.\n        \n    - `updated_at` (string): The timestamp of the last update.\n        \n    - `amount` (string): The amount paid by the user.\n        \n- `shared_by` (array): An array of objects representing the users with whom the expense is shared in the created group, along with their respective details.\n    \n    - `id` (number): The ID of the sharing record.\n        \n    - `user` (number): The user ID.\n        \n    - `created_at` (string): The timestamp of creation.\n        \n    - `updated_at` (string): The timestamp of the last update.\n        \n    - `amount` (string): The amount shared by the user.\n        \n- `created_at` (string): The timestamp of creation of the expense group.\n    \n- `updated_at` (string): The timestamp of the last update of the expense group.\n    \n- `amount` (string): The total amount of the expense group.\n    \n- `title` (string): The title of the expense group.\n    \n- `description` (string): A description of the expense group.\n    \n- `created_by` (number): The ID of the user who created the expense group.\n    \n- `group` (number): The ID of the group to which the expense belongs."
+									},
+									"response": [
+										{
+											"name": "example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"paid_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1000\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 1000\r\n        }\r\n    ],\r\n    \"shared_by\": [\r\n        {\r\n            \"user\": 1,\r\n            \"amount\": 1500\r\n        },\r\n        {\r\n            \"user\": 4,\r\n            \"amount\": 500\r\n        }\r\n    ],\r\n    \"amount\": 2000,\r\n    \"title\": \"Party Banner\",\r\n    \"description\": \"Party prachar banner\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8000/expense/group/1/",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8000",
+													"path": [
+														"expense",
+														"group",
+														"1",
+														""
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Tue, 17 Sep 2024 13:58:17 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "WSGIServer/0.2 CPython/3.12.2"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Allow",
+													"value": "POST, OPTIONS"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Length",
+													"value": "715"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 9,\n    \"paid_by\": [\n        {\n            \"id\": 3,\n            \"user\": 1,\n            \"created_at\": \"2024-09-17T13:46:09.647948Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.647948Z\",\n            \"amount\": \"1000.00\"\n        },\n        {\n            \"id\": 4,\n            \"user\": 4,\n            \"created_at\": \"2024-09-17T13:46:09.668405Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.668405Z\",\n            \"amount\": \"1000.00\"\n        }\n    ],\n    \"shared_by\": [\n        {\n            \"id\": 1,\n            \"user\": 1,\n            \"created_at\": \"2024-09-17T13:46:09.692489Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.692489Z\",\n            \"amount\": \"1500.00\"\n        },\n        {\n            \"id\": 2,\n            \"user\": 4,\n            \"created_at\": \"2024-09-17T13:46:09.712728Z\",\n            \"updated_at\": \"2024-09-17T13:46:09.712728Z\",\n            \"amount\": \"500.00\"\n        }\n    ],\n    \"created_at\": \"2024-09-17T13:46:09.631170Z\",\n    \"updated_at\": \"2024-09-17T13:46:09.631170Z\",\n    \"amount\": \"2000.00\",\n    \"title\": \"Party Banner\",\n    \"description\": \"Party prachar banner\",\n    \"created_by\": 1,\n    \"group\": 1\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "query",
+					"item": [
+						{
+							"name": "user/expense/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MDIwODg4LCJpYXQiOjE3MjY5MzQ0ODgsImp0aSI6ImJkNWY0N2VlYjhkMTQ0NTdiZmI5YjAyNjgzMDYxN2MzIiwidXNlcl9pZCI6MX0.BCYRwIU4c7dQ9q2ycEfl9jVV1rr8xjCMD7Wv7Jc1MoE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/user/expense/?query=user_expense",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"expense",
+										""
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "user_expense",
+											"description": "Acceptable values: user_expense | group_expense | all"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "user/expense/",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/user/expense/?query=all",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"expense",
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "all"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 21 Sep 2024 13:57:15 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.2"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "827"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"expense_id\": 1,\n        \"expense_amount\": \"-420.00\",\n        \"title\": \"Bharat Jodo Yatra\",\n        \"description\": \"For black suit\",\n        \"created_at\": \"2024-09-16T12:50:22.457977Z\",\n        \"created_by\": \"rahul\"\n    },\n    {\n        \"expense_id\": 2,\n        \"expense_amount\": \"1000.00\",\n        \"title\": \"Whynad Visit\",\n        \"description\": \"Travel expenses\",\n        \"created_at\": \"2024-09-16T12:53:01.034820Z\",\n        \"created_by\": \"sam\"\n    },\n    {\n        \"expense_id\": 4,\n        \"expense_amount\": \"-2000.00\",\n        \"title\": \"Mediahouse\",\n        \"description\": \"For advertisement\",\n        \"created_at\": \"2024-09-16T12:56:43.722892Z\",\n        \"created_by\": \"bapu\"\n    },\n    {\n        \"expense_id\": 13,\n        \"expense_amount\": \"1000.00\",\n        \"title\": \"Party Banner\",\n        \"description\": \"Party prachar banner\",\n        \"created_at\": \"2024-09-19T06:37:06.987414Z\",\n        \"created_by\": \"sam\"\n    },\n    {\n        \"expense_id\": 13,\n        \"expense_amount\": \"-1500.00\",\n        \"title\": \"Party Banner\",\n        \"description\": \"Party prachar banner\",\n        \"created_at\": \"2024-09-19T06:37:06.987414Z\",\n        \"created_by\": \"sam\"\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "settle_up",
+					"item": [
+						{
+							"name": "expense/group/<int:group_id>/settle_up/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MDg3NzM3LCJpYXQiOjE3MjcwMDEzMzcsImp0aSI6IjE2NTlmYjFlMGMwNTQxMWY4ZWVhMjdjMzQ2ZjJlMWQ2IiwidXNlcl9pZCI6NH0.kH5GPcxa6UeD0YC9GbOGhRvs9WZjYYNu8aID34Mzgj0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/expense/group/1/settle_up/?strategy=n_minus_1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"expense",
+										"group",
+										"1",
+										"settle_up",
+										""
+									],
+									"query": [
+										{
+											"key": "strategy",
+											"value": "n_minus_1",
+											"description": "Acceptable values: n_minus_1 | greedy"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "balance_sheet_group_1",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/expense/group/1/settle_up/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"expense",
+												"group",
+												"1",
+												"settle_up",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 21 Sep 2024 18:17:17 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.2"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "34"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"1\": -500,\n    \"4\": 1000,\n    \"5\": -500\n}"
+								},
+								{
+									"name": "settlement_trns_group_1",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/expense/group/1/settle_up/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"expense",
+												"group",
+												"1",
+												"settle_up",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 10:36:15 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.2"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "69"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"_from\": 1,\n        \"to\": 4,\n        \"amount\": 500\n    },\n    {\n        \"_from\": 5,\n        \"to\": 4,\n        \"amount\": 500\n    }\n]"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

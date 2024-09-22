@@ -1,0 +1,50 @@
+Splitwise MVP:
+
+1. Users can register amd update their profiles
+  -- DONE
+
+2. A user's profile should contain at least their name, phone number and password
+  -- DONE
+    --- Using user's email instead of phone number
+
+3. Users can participate in expenses with other users
+  -- DONE
+
+4. Users can participate in groups
+  -- DONE
+
+5. To add an expense, a user must specify either the group or the other users involved in
+the expense, along with who paid what and who owes what. They must also specify a description
+of the expense.
+  -- DONE
+
+6. A user can see their total owed amount
+
+7. A user can see a history of the expenses they are involved in
+  -- DONE
+
+8. A user can see a history of the expenses made in a group that they are participating in
+  -- DONE
+
+9. Users should not be able to query about groups they are not a member of
+  -- DONE
+
+10. Only the user who has created a group can add/remove members to the group
+  -- DONE
+
+11. Users can request a settlement. The applicant should show a list of transactions, which when
+executed will ensure that the user no longer owes or receives money from any other user.
+Note that this need not settle-up any other users.
+
+12. Users can request a settle-up for any group they are participating in.
+The application should show a list of transactions, which if executed, will ensure that
+everyone participating in the group is settled up (owes a net of ₹0).
+Note that this will only deal with the expenses made inside that group. Expenses outside this
+group need not be settled.
+  -- DONE
+
+13. Good to have requirements.
+When settling a group, we should try to minimize the number of transactions that the group
+members should make to settle up.
+  -- PARTIALLY COMPLETED
+    --- "Greedy Settlement Algo" for group settlement
